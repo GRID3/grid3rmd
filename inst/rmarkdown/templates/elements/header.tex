@@ -1,0 +1,151 @@
+% This file extents the functionality of R Markdown and customises the output of the PDF documents
+% Author Michael Harper
+% Much based off https://github.com/rstudio/bookdown/blob/master/inst/examples/latex/preamble.tex
+
+% Packages for kableExtra
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+% Prevent hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+
+% Extra styling of document
+\usepackage[bf,singlelinecheck=off, justification=centering]{caption}
+\usepackage{grffile} % Allows file paths to work with symbols
+\usepackage{framed,color}
+\usepackage{flafter} % Prevent figures floating back in text.
+
+
+% Add bold caption title
+\usepackage{caption}
+\captionsetup{labelfont=bf}
+
+
+\usepackage{soul} % Add shading around inline text
+% Adds shading around inline code
+\definecolor{light}{RGB}{250,250,250}
+\sethlcolor{light}
+\renewcommand{\texttt}[1]{\hl{\ttfamily \mbox{#1}}}
+
+
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+% Defines the appearance of shaded boxes
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+
+% Adds logo to title
+% The function pdf_save will replace 'LOCALFILEPATH' with the filepath
+\usepackage{titling}
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=5cm,height=2cm]{LOCALFILEPATH/logo.png}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\makeatletter
+\@ifundefined{Shaded}{
+}{\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}}
+\makeatother
+
+\newenvironment{rmdblock}[1]
+  {
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+      {\includegraphics[width=3em,keepaspectratio]{LOCALFILEPATH/css/images/#1.png}}
+    }
+  }
+  \setlength{\fboxsep}{1em}
+  \begin{kframe}
+  \item
+  }
+  {
+  \end{kframe}
+  \end{itemize}
+  }
+\newenvironment{rmdnote}
+  {\begin{rmdblock}{note}}
+  {\end{rmdblock}}
+\newenvironment{rmdcaution}
+  {\begin{rmdblock}{caution}}
+  {\end{rmdblock}}
+\newenvironment{rmdimportant}
+  {\begin{rmdblock}{important}}
+  {\end{rmdblock}}
+\newenvironment{rmdtip}
+  {\begin{rmdblock}{tip}}
+  {\end{rmdblock}}
+\newenvironment{rmdwarning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+\newenvironment{rmddataknut}
+  {\begin{rmdblock}{dataknut}}
+  {\end{rmdblock}}
+\newenvironment{lightbulb}
+  {\begin{rmdblock}{lightbulb}}
+  {\end{rmdblock}}
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+

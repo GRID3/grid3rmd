@@ -1,0 +1,10 @@
+Package: rmdTemplates
+Type: Package
+Title: GRID3 R Markdown Templates
+Version: 0.1.0
+Author: Michael Harper
+Maintainer: Michael Harper <michael.harper@flowminder.org>
+Description: Customised HTML and PDF templates for the GRID3 project.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true

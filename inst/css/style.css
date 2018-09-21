@@ -1,0 +1,50 @@
+/* Control the appearance of greyed out boxes */
+
+.rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+.rmdcaution {
+  background-image: url("images/caution.png");
+}
+.rmdimportant {
+  background-image: url("images/important.png");
+}
+.rmdnote {
+  background-image: url("images/note.png");
+}
+.rmdtip {
+  background-image: url("images/tip.png");
+}
+.rmdwarning {
+  background-image: url("images/warning.png");
+}
+
+/* Change the style of tables */
+
+.flat-table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+}
+thead {
+  background-color: #2c3d4f;
+  color: white;
+  font-weight: normal;
+  padding: 20px 100px;
+  text-align: center;
+}
+tbody {
+  background-color: rgb(238, 238, 238);
+  color: rgb(111, 111, 111);
+  padding: 20px 30px;
+}
+
+tbody tr:hover {
+background: #e6f2ff;
+}
+

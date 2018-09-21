@@ -1,0 +1,8 @@
+sansfont: Helvetica
+mainfont: Helvetica
+fontsize: 12pt    # can only use 10,11 or 12pt see https://github.com/rstudio/rmarkdown/issues/878
+documentclass: article
+classoption: a4paper
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+header-includes:
+- \usepackage{float}
