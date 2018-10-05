@@ -17,8 +17,8 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
-  footer <- system.file("rmarkdown/templates/elements/footer.html", package = "rmdTemplates")
-  css <- system.file("css/style.css", package = "rmdTemplates")
+  footer <- system.file("rmarkdown/templates/elements/footer.html", package = "grid3rmd")
+  css <- system.file("css/style.css", package = "grid3rmd")
 
   # call the base html_document function
   bookdown::html_document2(toc = toc,
@@ -54,7 +54,7 @@ word_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
-  style <- system.file("rmarkdown/templates/elements/mystyles.docx", package = "rmdTemplates")
+  style <- system.file("rmarkdown/templates/elements/mystyles.docx", package = "grid3rmd")
 
   # call the base html_document function
   bookdown::word_document2(toc = toc,
@@ -89,18 +89,18 @@ pdf_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
-  template <- system.file("rmarkdown/templates/elements/template.tex", package = "rmdTemplates")
-  yaml <- system.file("rmarkdown/templates/elements/latexCommon.yaml", package = "rmdTemplates")
+  template <- system.file("rmarkdown/templates/elements/template.tex", package = "grid3rmd")
+  yaml <- system.file("rmarkdown/templates/elements/latexCommon.yaml", package = "grid3rmd")
 
   # A temporary header file is created which corrects the filepath with the local name
-  header <- system.file("rmarkdown/templates/elements/header.tex", package = "rmdTemplates")
-  filePathImages <- system.file("logo.png", package = "rmdTemplates")
+  header <- system.file("rmarkdown/templates/elements/header.tex", package = "grid3rmd")
+  filePathImages <- system.file("logo.png", package = "grid3rmd")
   updatedHeader <- stringr::str_replace(readLines(header), "LOCALFILEPATH", filePathImages)
   tempTex <- tempfile(pattern = "file", fileext = ".tex")
   writeLines(text = updatedHeader, tempTex)
 
   # Read the YAML file to use as settings for PDF output
-  opts <- rmdTemplates:::yaml_to_pandoc(yaml)
+  opts <- grid3rmd:::yaml_to_pandoc(yaml)
 
   # call the base html_document function
   bookdown::pdf_document2(toc = toc,

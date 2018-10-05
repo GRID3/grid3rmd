@@ -3,11 +3,14 @@ title: Your title
 author: Your Name
 date: 'Last run at: `r Sys.time()`'
 output: # You can alter the defaults of these by adding additional options. See ?SAVEr::html_save etc.
-  rmdTemplates::pdf_grid3: default
-  rmdTemplates::html_grid3: default
-  rmdTemplates::word_grid3: default
+  grid3rmd::pdf_grid3: default
+  grid3rmd::html_grid3: default
+  grid3rmd::word_grid3: default
 ---
 
-Test text
 
+
+```{block2, type = "rmdnote"}
+Test
+```
 
