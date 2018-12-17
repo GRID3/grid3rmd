@@ -1,4 +1,4 @@
-#' HTML Output for SAVE Reports
+#' HTML Output for GRID3 Reports
 #'
 #' Uses bookdown package to allow cross-referencing. Specifies many defaults,
 #'   including floating table of contents, code folding and styling.
@@ -36,7 +36,7 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
                            ...)
 }
 
-#' Word Output for SAVE Reports
+#' Word Output for GRID3 Reports
 #'
 #' Uses bookdown package to allow cross-referencing. Uses the styles reference
 #'  file `mystyles.docx` stored in directory `inst/rmarkdown/templates/elements`
@@ -68,7 +68,7 @@ word_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
 
 
-#' PDF Output for SAVE Reports
+#' PDF Output for GRID3 Reports
 #'
 #' A custom report style to fromat the output of R Markdown reports.
 #'  Uses bookdown's \code{pdf_document2} as the base format to allow
@@ -122,7 +122,7 @@ pdf_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
 #' Convert a YAML file into correct format for pandoc arguments
 #'
-#' This is an internal function used by the \code{pdf_save}
+#' This is an internal function used by the \code{pdf_GRID3}
 #'  function, and is designed to load and format the data from
 #'  an external YAML file, and format it correctly to be used
 #'  as an argument for pandoc.
