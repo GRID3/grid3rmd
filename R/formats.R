@@ -18,6 +18,7 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
   footer <- system.file("rmarkdown/templates/elements/footer.html", package = "grid3rmd")
+  header <- system.file("rmarkdown/templates/elements/header.html", package = "grid3rmd")
   css <- system.file("css/style.css", package = "grid3rmd")
 
   # call the base html_document function
@@ -31,7 +32,7 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
                            highlight = "tango",
                            code_folding = code_folding,
                            css = css,
-                           includes = rmarkdown::includes(after_body = footer),
+                           includes = rmarkdown::includes(after_body = footer, before_body = header),
                            ...)
 }
 
