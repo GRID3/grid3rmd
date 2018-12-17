@@ -1,10 +1,11 @@
-# rmdTemplates
+# grid3rmd
+
 R Markdown Templates for use within the GRID project
 
 ## Installation
 
 ```r
-devtools::install_github("GRID3/rmdTemplates")
+devtools::install_github("GRID3/grid3rmd")
 ```
 
 ## Using in file
