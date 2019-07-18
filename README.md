@@ -1,4 +1,10 @@
-# grid3rmd
+
+# grid3rmd <img src="http://www.data4sdgs.org/sites/default/files/styles/medium/public/logo/Flowminder%20Logo.png?itok=7KXISaDh" align="right" />
+
+![GitHub commit
+activity](https://img.shields.io/badge/Status-Work%20In%20Progres-orange.svg)
+
+-----
 
 R Markdown Templates for use within the GRID project
 
