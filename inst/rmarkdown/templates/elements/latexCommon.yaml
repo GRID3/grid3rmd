@@ -1,5 +1,5 @@
-sansfont: Helvetica
-mainfont: Helvetica
+sansfont: Arial
+mainfont: Arial
 fontsize: 12pt    # can only use 10,11 or 12pt see https://github.com/rstudio/rmarkdown/issues/878
 documentclass: article
 classoption: a4paper
