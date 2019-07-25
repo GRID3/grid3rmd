@@ -86,7 +86,7 @@ word_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 #' @author Michael Harper
 #' @export
 #'
-pdf_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
+pdf_grid3 <- function(toc = TRUE, toc_depth = 2, latex_engine= "xelatex", ...) {
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
@@ -95,7 +95,7 @@ pdf_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
   # A temporary header file is created which corrects the filepath with the local name
   header <- system.file("rmarkdown/templates/elements/header.tex", package = "grid3rmd")
-  filePathImages <- system.file("logo.png", package = "grid3rmd")
+  filePathImages <- system.file("", package = "grid3rmd")
   updatedHeader <- stringr::str_replace(readLines(header), "LOCALFILEPATH", filePathImages)
   tempTex <- tempfile(pattern = "file", fileext = ".tex")
   writeLines(text = updatedHeader, tempTex)
@@ -105,7 +105,7 @@ pdf_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
   # call the base html_document function
   bookdown::pdf_document2(toc = toc,
-                          latex_engine= "xelatex",
+                          latex_engine= latex_engine,
                           number_sections = TRUE,
                           toc_depth= 2,
                           fig_caption= TRUE,
