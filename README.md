@@ -29,19 +29,11 @@ An example of the outputs is shown below:
 
 ## Custom Blocks
 
-The templates include a range of [custom blocks](https://bookdown.org/yihui/bookdown/custom-blocks.html) which can be used in documents. The options available include **tip**, **question**, **exercise**, **important**, **rmdnote**, **rmdcaution**, **rmdimportant**, **rmdtip**, **rmdwarning**. These are used within code chunks:
-
-```{block2, type = "tip"}
-
-Your text for your custom block
-
-```
-
-The full set of options are shown below:
+The templates include a range of [custom blocks](https://bookdown.org/yihui/bookdown/custom-blocks.html) which can be used in documents. The options available include **tip**, **question**, **exercise**, **important**, **rmdnote**, **rmdcaution**, **rmdimportant**, **rmdtip**, **rmdwarning**. These are used within code chunks by setting the header as `{block2, type = "tip"}` and including markdown text within the chunk. The full set of options are shown below:
 
 ![](customChunks.png)
 
-
+For more examples and demonstrations, users should refer to the [template](https://github.com/GRID3/grid3rmd/blob/master/inst/rmarkdown/templates/gridTraining/skeleton/skeleton.Rmd)
 
 
 
