@@ -6,20 +6,15 @@ activity](https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg)
 
 -----
 
-This R package contains templates which can be used to 
-
-## Installation
-
-The package can be installed from GitHub as follows:
+This R package contains R Markdown templates for the [GRID3](http://grid3.org/) project, using brand fonts, colour schemes and icons. The package can be installed from GitHub as follows:
 
 ```r
 devtools::install_github("GRID3/grid3rmd")
 ```
 
+## Using the templates
 
-## Using in file
-
-The template includes output formats for PDF, HTML and Word. The following options can be used in the YAML of your R Markdown document.
+The template includes output formats for PDF, HTML and Word. These are available through RStudio through `File -> New -> RMarkdown -> From Template`, where `GRID3 Template` and `GRID3 Training Template`, or by changing the output format in the  the YAML of your R Markdown document using the following:
 
 ```yaml
 output:
@@ -31,3 +26,4 @@ output:
 An example of the outputs is shown below:
 
 ![](screenshot.png)
+
