@@ -2,17 +2,20 @@
 # grid3rmd <img src="http://www.data4sdgs.org/sites/default/files/styles/medium/public/logo/Flowminder%20Logo.png?itok=7KXISaDh" align="right" />
 
 ![GitHub commit
-activity](https://img.shields.io/badge/Status-Work%20In%20Progres-orange.svg)
+activity](https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg)
 
 -----
 
-R Markdown Templates for use within the GRID project
+This R package contains templates which can be used to 
 
 ## Installation
+
+The package can be installed from GitHub as follows:
 
 ```r
 devtools::install_github("GRID3/grid3rmd")
 ```
+
 
 ## Using in file
 
@@ -24,3 +27,7 @@ output:
   grid3rmd::pdf_grid3: default
   grid3rmd::word_grid3: default
 ```
+
+An example of the outputs is shown below:
+
+![](screenshot.png)
