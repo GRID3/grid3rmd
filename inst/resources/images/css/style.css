@@ -1,6 +1,6 @@
 /* Control the appearance of greyed out boxes */
 
-.rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdinfo, .rmdwarning {
+.rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdinfo, .rmdwarning, .tip, .question, .important, .exercise {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
   background: #f5f5f5 5px center/3em no-repeat;
@@ -22,6 +22,12 @@
 }
 .rmdwarning {
   background-image: url("images/warning.png");
+}
+.tip {
+  background-image: url("../tip.png");
+}
+.question {
+  background-image: url("../question.png");
 }
 
 /* Change the style of tables */
