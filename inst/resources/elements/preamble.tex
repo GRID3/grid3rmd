@@ -1,0 +1,178 @@
+% GRID3 Training Template
+% Author: Michael Harper
+% Date:
+
+
+% Load general packages
+% specific packages are loaded as required to be clearer of their use
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+ % Change fonts to Lato
+\usepackage[default]{lato}
+\usepackage[T1]{fontenc}
+
+% Prevent hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Defines the appearance of shaded boxes
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+% Set page geometry
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ left=25.4mm,
+ top=25mm,
+ right=25.4mm,
+ bottom=25mm,
+ headsep=5mm,
+ headheight=60pt,
+ }
+
+% GRID3 Palette
+% Define HTML colours for use
+\definecolor{customGrey}{HTML}{E2DDD2}
+\definecolor{customWhite}{RGB}{255, 255, 255}
+\definecolor{customRed}{HTML}{B03A2E}
+\definecolor{customPurple}{HTML}{6C3483}
+\definecolor{customGrey}{HTML}{E2DDD2}
+\definecolor{customOrange}{HTML}{B9770E}
+\definecolor{customBlue}{HTML}{2E86C1}
+
+
+\setstretch{1.25}              % Slightly expand line spacing
+\setlength{\parindent}{0em}     % Remove paragraph indents
+\setcounter{secnumdepth}{0}     % Suppress numbering for each subsection
+
+% Simplify document title
+\makeatletter
+\renewcommand*\maketitle{%
+    \begingroup
+    \fontsize{20}{20} % 72pt on 80pt leading
+    \fontseries{b}% Bold
+    \color{customRed}
+    \selectfont
+    \setlength{\parindent}{0pc} % Make sure there is no indentation
+    \@title
+\endgroup
+}
+\makeatother
+
+% Change colours of document
+\subsubsectionfont{\color{customRed}}
+\subsectionfont{\color{customRed}}
+\sectionfont{\color{customRed}}
+
+% Change bulletpoint style
+\definecolor{orange}{RGB}{226,109,56}
+\newcommand{\localtextbulletone}{\textcolor{orange}{\raisebox{.45ex}{\rule{.6ex}{.6ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+
+% Update styles to match guide
+\renewcommand{\emph}[1]{\textit{\textcolor{orange}{#1}}}
+
+% create a command answer which provides a line for answers
+\newcommand{\answer}{\hspace{1pt} \rule{40pt}{1pt} \hspace{1pt}}
+
+
+% Customise header and footers
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{titleps}
+\usepackage{fancyhdr}
+
+% Set the settings of the header using fancyhdr
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % removes the line from the header
+\fancyhf{}
+\lhead{}
+\rhead{\includegraphics[width=1.59cm]{LOCALFILEPATH/gridlogo.png}} % Add logo
+
+% tikz graphics are used to place the footer image
+\fancyfoot[C]{Page \textbf{\thepage}\ of \textbf{\pageref{LastPage}}
+    {\tikz[remember picture,overlay] \node[anchor=south west,inner sep=0pt,outer sep=0pt] at (current page.south west) {\includegraphics[width=\paperwidth]{LOCALFILEPATH/footer.png}};}
+}
+
+% Create custom environments for exercises and tips
+\usetikzlibrary{calc}
+\usepackage[many]{tcolorbox}
+
+% Create a basic custom block with no images (used for exercises)
+\newtcolorbox{customBlock}{
+  colback = customGrey,
+  colframe = customGrey,
+  before skip=5mm,
+  after skip=5mm,
+  boxsep=5pt,
+  arc=4pt}
+
+% Create a custom block containing images (used for questions and tips)
+\newtcolorbox{customBlockImage}[2][]{
+  enhanced,
+  left skip={.15\linewidth},
+  top=10pt,
+  bottom=10pt,
+  colback = customGrey,
+  colframe = white,
+  boxsep=5pt,
+  arc=10pt,
+  before skip=5mm,
+  after skip=5mm,
+  outer arc=10pt,
+  leftupper=0.2cm,
+overlay={
+    \node[anchor=west]
+      at ([xshift=-60pt] $ (interior.north west)!0.5!(interior.south west) $ )
+       {{\setkeys{Gin}{width=15.2mm,keepaspectratio}\includegraphics{#2}}};},
+#1}
+
+% Define a box with line at top and bottom for quotes
+\newtcolorbox{quoteBlock}{enhanced,
+borderline horizontal={0.5mm}{0pt}{customRed},
+colback = customWhite,
+colframe = customWhite,
+halign=center,
+fontupper=\color{customRed} \bfseries \fontsize{11}{11} \itshape,
+center,
+width = 14cm,
+boxsep=3mm
+}
+
+% Create the new environments for document
+\newenvironment{tip}
+  {\begin{customBlockImage}[colframe=customGrey]{LOCALFILEPATH/tip}}
+  {\end{customBlockImage}}
+\newenvironment{question}
+  {\begin{customBlockImage}[colframe=customWhite, colback=customWhite]{LOCALFILEPATH/question}}
+  {\end{customBlockImage}}
+\newenvironment{exercise}
+  {\begin{customBlock}}
+  {\end{customBlock}}
+\newenvironment{important}
+  {\begin{quoteBlock}}
+  {\end{quoteBlock}}
+\newenvironment{rmdnote}
+  {\begin{customBlockImage}{LOCALFILEPATH/css/images/note}}
+  {\end{customBlockImage}}
+\newenvironment{rmdcaution}
+  {\begin{customBlockImage}{LOCALFILEPATH/css/images/caution}}
+  {\end{customBlockImage}}
+\newenvironment{rmdimportant}
+  {\begin{customBlockImage}{LOCALFILEPATH/css/images/important}}
+  {\end{customBlockImage}}
+\newenvironment{rmdtip}
+  {\begin{customBlockImage}{LOCALFILEPATH/css/images/tip}}
+  {\end{customBlockImage}}
+\newenvironment{rmdwarning}
+  {\begin{customBlockImage}{LOCALFILEPATH/css/images/warning}}
+  {\end{customBlockImage}}
+
+\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end

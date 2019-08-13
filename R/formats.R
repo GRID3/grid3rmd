@@ -17,9 +17,10 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
-  footer <- system.file("rmarkdown/templates/elements/footer.html", package = "grid3rmd")
-  header <- system.file("rmarkdown/templates/elements/header.html", package = "grid3rmd")
-  css <- system.file("css/style.css", package = "grid3rmd")
+  footer <- system.file("resources/elements/footer.html", package = "grid3rmd")
+  header <- system.file("resources/elements/header.html", package = "grid3rmd")
+  css <- system.file("resources/images/css/style.css", package = "grid3rmd")
+  theme_css <- system.file("resources/elements/bootstrap_custom.css", package = "grid3rmd")
 
   # call the base html_document function
   bookdown::html_document2(toc = toc,
@@ -28,10 +29,8 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
                            self_contained = self_contained,
                            collapsed = FALSE,
                            toc_float = TRUE,
-                           theme = "flatly",
-                           highlight = "tango",
                            code_folding = code_folding,
-                           css = css,
+                           css = list(css, theme_css),
                            includes = rmarkdown::includes(after_body = footer, before_body = header),
                            ...)
 }
@@ -55,7 +54,7 @@ word_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
-  style <- system.file("rmarkdown/templates/elements/mystyles.docx", package = "grid3rmd")
+  style <- system.file("resources/elements/mystyles.docx", package = "grid3rmd")
 
   # call the base html_document function
   bookdown::word_document2(toc = toc,
@@ -86,58 +85,22 @@ word_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 #' @author Michael Harper
 #' @export
 #'
-pdf_grid3 <- function(toc = TRUE, toc_depth = 2, latex_engine= "xelatex", ...) {
+pdf_grid3 <- function(toc = FALSE, toc_depth = 2, number_sections = FALSE, latex_engine= "pdflatex", ...) {
 
   # get the locations of resource files located within the package
-  #css <- system.file("reports/styles.css", package = "mypackage")
-  template <- system.file("rmarkdown/templates/elements/template.tex", package = "grid3rmd")
-  yaml <- system.file("rmarkdown/templates/elements/latexCommon.yaml", package = "grid3rmd")
-
-  # A temporary header file is created which corrects the filepath with the local name
-  header <- system.file("rmarkdown/templates/elements/header.tex", package = "grid3rmd")
-  filePathImages <- system.file("", package = "grid3rmd")
+  header <- system.file("resources/elements/preamble.tex", package = "grid3rmd")
+  filePathImages <- system.file("resources/images", package = "grid3rmd")
   updatedHeader <- stringr::str_replace(readLines(header), "LOCALFILEPATH", filePathImages)
   tempTex <- tempfile(pattern = "file", fileext = ".tex")
   writeLines(text = updatedHeader, tempTex)
 
-  # Read the YAML file to use as settings for PDF output
-  opts <- grid3rmd:::yaml_to_pandoc(yaml)
-
   # call the base html_document function
   bookdown::pdf_document2(toc = toc,
                           latex_engine= latex_engine,
-                          number_sections = TRUE,
-                          toc_depth= 2,
+                          number_sections = number_sections,
+                          toc_depth= toc_depth,
                           fig_caption= TRUE,
-                          template= template,
                           includes = rmarkdown::includes(in_header = tempTex),
-                          pandoc_args = opts,
                           ...)
 
-
-
-
-}
-
-
-#' Convert a YAML file into correct format for pandoc arguments
-#'
-#' This is an internal function used by the \code{pdf_GRID3}
-#'  function, and is designed to load and format the data from
-#'  an external YAML file, and format it correctly to be used
-#'  as an argument for pandoc.
-#'
-#'  @param file the file path of the YAML document
-#'
-yaml_to_pandoc <- function(file){
-
-  opts <- yaml::read_yaml(file)
-
-  # Convert options to correct format for pandoc
-  settings <-
-    lapply(1:length(opts), function(x)
-      rmarkdown::pandoc_variable_arg(name = names(opts[x]), value = opts[[x]]))
-
-  settings <- unlist(settings)
-  return(settings)
 }

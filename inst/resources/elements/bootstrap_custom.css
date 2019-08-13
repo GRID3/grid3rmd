@@ -1,0 +1,23 @@
+h2{
+    font-size: 50px !important;
+    color: #AB3833 !important
+  }
+
+
+h1{
+    color: #AB3833 !important
+  }
+
+
+a:link {
+    color: #F26522;
+}
+
+
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #212121;
+    background-color: #FCAF17;
+    border-color: #E1E2E1;
+}

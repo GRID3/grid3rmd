@@ -1,0 +1,144 @@
+---
+title: "GRID3 Training material guidelines"
+output: grid3rmd::pdf_grid3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# General voice/tone
+
+Conversational tone, give examples/reasons why tasks in the practical are relevant to learners/participants.  Be aware of audience expectations, skills and competency, tailor text to meet that audience. Training materials should meet previously agreed collaborative objectives and the needs of participants. In regards to language, please adopt the following protocol on pronoun use:
+
+-	We for general progression through practical
+-	You for learner specific tasks. 
+-	‘He/She’ used if required in examples/challenges etc., preferable use of  ‘they’
+
+
+# Exercise format
+
+**Opening text: Set expectations, tasks and outcomes: Introduce critical information and tasks required, before starting exercise**
+
+1.	Learning Objectives paragraph: 
+-	Purpose and expected outcome of the exercise, expressed clearly 
+-	A clear sequential description of activities in the exercise
+-	A brief description of the data used
+2.	The End of session outcomes (bullet points): 
+-	Outputs which the learner will be able to create on completion of the exercise 
+-	Learner competency of each item is required to meet the needs of the module
+
+**Exercise Sections (referred to as Parts): Discrete numbered tasks linked to the Learning Objectives**
+
+-	A numbered statement outlining the task clearly
+-	The statement is then followed by the instructional steps required to fulfil the task
+-	Screenshots and explanatory images used as visual guides
+-	Relevant tools, important steps, critical input highlighted using clear graphical elements
+-	User tips added as discrete elements, highlighting knowledge useful to a topic/process outlined in the exercise
+-	Questions posed relevant to datasets associated with the task, with answers gained by interrogating the datasets directly
+-	Challenge stages added where relevant/possible to stretch the learners. Each challenge builds on the skills gained by completion of earlier tasks, and should not require knowledge/ skills not covered in that exercise. Where challenge completion requires knowledge or skills covered in earlier completed exercises, these should be signposted. Hints should be used as one sentence pointers to start the challenge, if thought necessary.
+
+## Text styles and Protocols
+
+**Style Templates**: This document and its related Microsoft Word Template contain pre-set styles, branded in-line with GRID3. The Training team will provide links to the template document and if requested, instruction in use of the styles. These are the
+
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+#### Heading 5
+Normal Text
+
+1.	A numbered statement before a bullet list
+-	Bullet point a
+-	Bullet point b
+-	Bullet point c
+
+*Statement with Emphasis*
+
+```{block2, type = "important"}
+Key point, style: Intense Quote
+```
+
+**Formatting of instructional text**: Thus far, the format adopted for instructional text has been determined by the application QGIS. If possible, please follow the protocols but let the training team know if they do not apply well to with other applications.
+
+-	Menu commands, buttons and options are formatted in **bold**
+-	Filepaths, data layers or input values are formatted in italics, e.g. *file  >  new project*  ( the “>” symbol indicates a sub-menu action
+-	Avoid use of single or double apostrophes ‘ ”
+
+There follows an example exercise using formats, styles and protocols which should be adopted….. 
+
+\newpage
+# Exercise 2 – Getting Started
+
+```{block2, type = "important"}
+IMPORTANT! Before starting this exercise, please turn to appendix section at the back of your manual and complete the Configuring QGIS document.
+```
+
+**Learning objectives**: The purpose of this exercise is to become familiar with QGIS’s application windows and graphical user interface, and the concept of a project document.  You will look at the basic tools and functions within QGIS. We shall be working with a range of spatial data for Nigeria. We encourage you to explore the data beyond the instructions provided here, experiment with functionality, and please ask if there is anything you don’t understand!
+
+**By the end of this session you will be able to:**
+
+-	Open a QGIS project
+-	Identify the key components of the QGIS interface 
+-	Open an attribute table
+-	Navigate around the map canvas and investigate features of interest
+-	Create a spatial bookmark
+-	Using the Identify tool
+-	Access QGIS help resources
+-	Browse for and load spatial data
+
+## Part 1 – Save your favourite locations using Spatial Bookmark 
+
+Optional opening text providing context on topic – spatial bookmarks – this should explain why spatial bookmarks are useful; why is worthwhile devoting time to it.
+
+1.	Create new spatial bookmarks.
+-	Now go to the Map Navigation toolbar and click New Bookmark   
+-	You should see the new bookmark appear in the Spatial Bookmarks Panel. It is currently highlighted in blue, and the cursor is active in the name field; rename this bookmark Kano-Kaduna
+It will be useful to also have a bookmark for the full extent of Nigeria. 
+-	Right-click on NGA_states and select Zoom to Layer
+-	Click again on the New Bookmark  button
+-	Call this bookmark Nigeria
+2.	Using bookmarks to shift your map extent.
+-	Zoom out to the full extent of the map using the Zoom full button 
+-	If the Spatial Bookmarks panel and the bookmarks you just created is closed, click on the Show Bookmarks button. 
+ -	Click Kano-Kaduna to highlight it
+-	Now click on the Zoom to button circled above.
+
+You will notice that your map zooms to the bookmarked area.
+
+**Note**:  Bookmarks are a good way to guide people around your map or to save important geographic extents such as field survey sites and Areas of Interest.
+
+
+```{block2, type="tip"}
+
+**User tip**: Bookmarks are saved in the user’s local QGIS programme, not in the .qgs file. To share bookmarks with others you can export them to a file (.xml), the recipient then imports the file. Can you find the **Import/Export Bookmarks** button on the Bookmarks panel?
+
+```
+
+# Part 2 – Using the Identify Features tool
+
+The identify Features tool provides a simple way of retrieving attribute data from map objects.  The tool is selected from the toolbar and is then used to click on map objects you want to retrieve data for.  The identify features tool retrieves the attribute data associated with the active layer by default.
+
+1.	Using the Identify Features tool to view the attributes for a map object. 
+* In the Layers window, click the *NGA_settlements* layer to make it the active layer
+*	Select the **Identify Features** tool and click on one of the *NGA_settlement points* in the map window.
+* You will notice that the point you selected is now highlighted in red
+*	You will also notice that the **Identify Results** panel appears
+
+This panel displays all the attributes for the feature you selected. Use the Identify Features tool to answer the follow questions (hint: you may need to use the tool with other layers in the Layers panel):
+
+```{block2, type="question"}
+
+- What is the class of settlement Yola? \answer
+-	What is the estimated population count Birnin Kebbi? \answer
+- In which state is Birnin Kebbi located, and what is the State Abbreviation (hint: first decide which layer you need, then look for the field name state_abbr  \answer
+-	From the NGA_states layer, what is the area in km2 of Kano state  \answer and Kaduna state  \answer ?
+
+
+```
+
+
+
+
