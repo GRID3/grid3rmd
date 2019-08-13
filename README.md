@@ -27,3 +27,21 @@ An example of the outputs is shown below:
 
 ![](screenshot.png)
 
+## Custom Blocks
+
+The templates include a range of [custom blocks](https://bookdown.org/yihui/bookdown/custom-blocks.html) which can be used in documents. The options available include **tip**, **question**, **exercise**, **important**, **rmdnote**, **rmdcaution**, **rmdimportant**, **rmdtip**, **rmdwarning**. These are used within code chunks:
+
+```{block2, type = "tip"}
+
+Your text for your custom block
+
+```
+
+The full set of options are shown below:
+
+![](customChunks.png)
+
+
+
+
+
