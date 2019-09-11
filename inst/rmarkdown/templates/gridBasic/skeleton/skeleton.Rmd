@@ -8,6 +8,12 @@ output: # You can alter the defaults of these by adding additional options. See 
   grid3rmd::word_grid3: default
 ---
 
+```{r setup, include=F}
+# Default settings for the template. Will make sure that long lines of code will wrap 
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=60),
+               tidy=TRUE)
+```
 
 
 ```{block2, type = "rmdnote"}

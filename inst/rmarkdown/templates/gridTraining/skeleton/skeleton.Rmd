@@ -4,7 +4,10 @@ output: grid3rmd::pdf_grid3
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Default settings for the template. Will make sure that long lines of code will wrap 
+library(knitr)
+opts_chunk$set(tidy.opts=list(width.cutoff=60),
+               tidy=TRUE)
 ```
 
 # General voice/tone
