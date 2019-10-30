@@ -145,3 +145,14 @@ This panel displays all the attributes for the feature you selected. Use the Ide
 
 
 
+```{block2, type = "challenge"}
+# Challenge: import and organise data
+
+1. Using one of the add data methods outlined previously
+2. Place each dataset appropriately in a layer group folder
+
+```
+
+
+
+
