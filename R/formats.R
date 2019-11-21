@@ -13,7 +13,7 @@
 #' @export
 #' @author Michael Harper
 #'
-html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE, ...) {
+html_grid3 <- function(toc = TRUE, code_folding = "hide",  number_sections = TRUE, self_contained = TRUE, ...) {
 
   # get the locations of resource files located within the package
   #css <- system.file("reports/styles.css", package = "mypackage")
@@ -25,7 +25,7 @@ html_grid3 <- function(toc = TRUE, code_folding = "hide", self_contained = TRUE,
   # call the base html_document function
   bookdown::html_document2(toc = toc,
                            fig_caption = TRUE,
-                           number_sections = TRUE,
+                           number_sections = number_sections,
                            self_contained = self_contained,
                            collapsed = FALSE,
                            toc_float = TRUE,
