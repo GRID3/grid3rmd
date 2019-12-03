@@ -43,6 +43,7 @@
 \definecolor{customRed}{HTML}{B03A2E}
 \definecolor{customPurple}{HTML}{6C3483}
 \definecolor{customGrey}{HTML}{E2DDD2}
+\definecolor{customGrey2}{RGB}{90, 90, 90}
 \definecolor{customOrange}{HTML}{B9770E}
 \definecolor{customBlue}{HTML}{2E86C1}
 
@@ -61,7 +62,18 @@
     \selectfont
     \setlength{\parindent}{0pc} % Make sure there is no indentation
     \@title
+    \vspace{5mm}
 \endgroup
+    \begingroup
+    \fontsize{14}{14} % 72pt on 80pt leading
+    \color{customGrey2}
+    \setlength{\parindent}{0pc} % Make sure there is no indentation
+    \setlength{\parskip}{-2mm}
+    \\
+    \textit{\@author} \\
+
+    \textit{\@date} \\
+    \endgroup
 }
 \makeatother
 
