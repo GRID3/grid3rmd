@@ -1,6 +1,15 @@
 ---
 title: "GRID3 Training material guidelines"
-output: grid3rmd::pdf_grid3
+output: 
+  grid3rmd::pdf_grid3:
+    # Option to add additional latex to document. Useful for setting the headers which vary by document
+    extra_tex:
+      - \fancyhead[L]{
+        \textcolor{customRed}
+        {\textbf{Module:} Example module\\ 
+        \textbf{Course 1:} Explanation
+        }
+        }
 ---
 
 ```{r setup, include=FALSE}

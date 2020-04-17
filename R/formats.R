@@ -85,12 +85,16 @@ word_grid3 <- function(toc = TRUE, toc_depth = 2, ...) {
 #' @author Michael Harper
 #' @export
 #'
-pdf_grid3 <- function(toc = FALSE, toc_depth = 2, number_sections = FALSE, latex_engine= "pdflatex", ...) {
+pdf_grid3 <- function(toc = FALSE, toc_depth = 2, number_sections = FALSE, latex_engine= "pdflatex", extra_tex = "", ...) {
 
   # get the locations of resource files located within the package
   header <- system.file("resources/elements/preamble.tex", package = "grid3rmd")
   filePathImages <- system.file("resources/images", package = "grid3rmd")
   updatedHeader <- stringr::str_replace(readLines(header), "LOCALFILEPATH", filePathImages)
+
+  # Allow additional LaTeX to be added to header
+  updatedHeader <- c(updatedHeader, extra_tex)
+
   tempTex <- tempfile(pattern = "file", fileext = ".tex")
   writeLines(text = updatedHeader, tempTex)
 
