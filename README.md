@@ -1,4 +1,6 @@
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # grid3rmd
 
 ![GitHub commit
@@ -27,11 +29,7 @@ using the following:
 
 An example of the outputs is shown below:
 
-``` r
-knitr::include_graphics("screenshot.png")
-```
-
-<img src="screenshot.png" width="1966" />
+<img src="screenshot.png" width="100%" style="display: block; margin: auto;" />
 
 ## Custom Blocks
 
@@ -43,11 +41,7 @@ can be used in documents. The options available include **tip**,
 chunks by setting the header as `{block2, type = "tip"}` and including
 markdown text within the chunk. The full set of options are shown below:
 
-``` r
-knitr::include_graphics("customChunks.png")
-```
-
-<img src="customChunks.png" width="932" />
+<img src="customChunks.png" width="100%" style="display: block; margin: auto;" />
 
 For more examples and demonstrations, users should refer to the
 [template](https://github.com/GRID3/grid3rmd/blob/master/inst/rmarkdown/templates/gridTraining/skeleton/skeleton.Rmd)
