@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GRID3 R Markdown Templates • grid3rmd</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -59,30 +59,31 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="grid3rmd-" class="section level1">
+<div id="grid3rmd" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#grid3rmd-" class="anchor"></a>grid3rmd <img src="http://www.data4sdgs.org/sites/default/files/styles/medium/public/logo/Flowminder%20Logo.png?itok=7KXISaDh" align="right">
-</h1></div>
+<a href="#grid3rmd" class="anchor"></a>grid3rmd</h1></div>
 <p><img src="https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg" alt="GitHub commit activity"></p>
 <hr>
 <p>This R package contains R Markdown templates for the <a href="http://grid3.org/">GRID3</a> project, using brand fonts, colour schemes and icons. The package can be installed from GitHub as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"GRID3/grid3rmd"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"GRID3/grid3rmd"</span>)</span></code></pre></div>
 <div id="using-the-templates" class="section level2">
 <h2 class="hasAnchor">
 <a href="#using-the-templates" class="anchor"></a>Using the templates</h2>
 <p>The template includes output formats for PDF, HTML and Word. These are available through RStudio through <code>File -&gt; New -&gt; RMarkdown -&gt; From Template</code>, where <code>GRID3 Template</code> and <code>GRID3 Training Template</code>, or by changing the output format in the the YAML of your R Markdown document using the following:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="at">  grid3rmd:</span><span class="fu">:html_grid3</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="at">  grid3rmd:</span><span class="fu">:pdf_grid3</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="at">  grid3rmd:</span><span class="fu">:word_grid3</span><span class="kw">:</span><span class="at"> default</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>output<span class="op">:</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span>grid3rmd<span class="op">::</span>html_grid3<span class="op">:</span><span class="st"> </span>default</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  grid3rmd<span class="op">::</span>pdf_grid3<span class="op">:</span><span class="st"> </span>default</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  grid3rmd<span class="op">::</span>word_grid3<span class="op">:</span><span class="st"> </span>default</span></code></pre></div>
 <p>An example of the outputs is shown below:</p>
-<p><img src="screenshot.png"></p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span>(<span class="st">"screenshot.png"</span>)</pre></div>
+<p><img src="screenshot.png" width="1966"></p>
 </div>
 <div id="custom-blocks" class="section level2">
 <h2 class="hasAnchor">
 <a href="#custom-blocks" class="anchor"></a>Custom Blocks</h2>
 <p>The templates include a range of <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">custom blocks</a> which can be used in documents. The options available include <strong>tip</strong>, <strong>question</strong>, <strong>exercise</strong>, <strong>important</strong>, <strong>rmdnote</strong>, <strong>rmdcaution</strong>, <strong>rmdimportant</strong>, <strong>rmdtip</strong>, <strong>rmdwarning</strong>. These are used within code chunks by setting the header as <code>{block2, type = "tip"}</code> and including markdown text within the chunk. The full set of options are shown below:</p>
-<p><img src="customChunks.png"></p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span>(<span class="st">"customChunks.png"</span>)</pre></div>
+<p><img src="customChunks.png" width="932"></p>
 <p>For more examples and demonstrations, users should refer to the <a href="https://github.com/GRID3/grid3rmd/blob/master/inst/rmarkdown/templates/gridTraining/skeleton/skeleton.Rmd">template</a></p>
 </div>
 </div>

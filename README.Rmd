@@ -1,9 +1,7 @@
 ---
 output: github_document
 ---
-
-# grid3rmd <img src="http://www.data4sdgs.org/sites/default/files/styles/medium/public/logo/Flowminder%20Logo.png?itok=7KXISaDh" align="right" />
-
+# grid3rmd 
 ![GitHub commit
 activity](https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg)
 
@@ -39,7 +37,6 @@ The templates include a range of [custom blocks](https://bookdown.org/yihui/book
 ```{r}
 knitr::include_graphics("customChunks.png")
 ```
-
 
 For more examples and demonstrations, users should refer to the [template](https://github.com/GRID3/grid3rmd/blob/master/inst/rmarkdown/templates/gridTraining/skeleton/skeleton.Rmd)
 
