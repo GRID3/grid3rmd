@@ -1,7 +1,7 @@
 Package: grid3rmd
 Type: Package
 Title: GRID3 R Markdown Templates
-Version: 0.1.7
+Version: 0.1.8
 Author: Michael Harper
 Maintainer: Michael Harper <michael.harper@flowminder.org>
 Description: Customised HTML and PDF templates for the GRID3 project.
@@ -11,3 +11,4 @@ LazyData: true
 Imports: 
     bookdown, 
     rmarkdown
+RoxygenNote: 7.1.0

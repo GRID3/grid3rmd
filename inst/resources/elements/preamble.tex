@@ -47,35 +47,11 @@
 \definecolor{customOrange}{HTML}{B9770E}
 \definecolor{customBlue}{HTML}{2E86C1}
 
-\emergencystretch 1em          % Prevent lines from be justified in title
 \setstretch{1.25}              % Slightly expand line spacing
 \setlength{\parindent}{0em}     % Remove paragraph indents
 %\setcounter{secnumdepth}{0}     % Suppress numbering for each subsection
 
-% Simplify document title
-\makeatletter
-\renewcommand*\maketitle{%
-    \begingroup
-    \fontsize{20}{20} % 72pt on 80pt leading
-    \fontseries{b}% Bold
-    \color{customRed}
-    \selectfont
-    \setlength{\parindent}{0pc} % Make sure there is no indentation
-    \@title
-    \vspace{5mm}
-\endgroup
-    \begingroup
-    \fontsize{14}{14} % 72pt on 80pt leading
-    \color{customGrey2}
-    \setlength{\parindent}{0pc} % Make sure there is no indentation
-    \setlength{\parskip}{-2mm}
-    \\
-    \textit{\@author} \\
-    \textit{\@date} \\
-    \vspace{-3ex}
-    \endgroup
-}
-\makeatother
+
 
 \usepackage{titlesec}
 \titlespacing*{\section}
@@ -195,4 +171,32 @@ boxsep=3mm
 
 \makeatletter
 \global\let\tikz@ensure@dollar@catcode=\relax
+\makeatother
+
+
+
+% Simplify document title
+\makeatletter
+\renewcommand*\maketitle{%
+    \begingroup
+    \fontsize{20}{20} % 72pt on 80pt leading
+    \fontseries{b}% Bold
+    \color{customRed}
+    \selectfont
+    \setlength{\parindent}{0pc} % Make sure there is no indentation
+    \@title
+    \vspace{5mm}
+\endgroup
+    \begingroup
+    \raggedright
+    \fontsize{14}{14} % 72pt on 80pt leading
+    \color{customGrey2}
+    \setlength{\parindent}{0pc} % Make sure there is no indentation
+    \setlength{\parskip}{-2mm}
+    \\
+    \textit{\@author} \\
+    \textit{\@date} \\
+    \vspace{-3ex}
+    \endgroup
+}
 \makeatother
