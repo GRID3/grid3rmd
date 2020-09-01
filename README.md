@@ -5,17 +5,19 @@
 
 <!-- badges: start -->
 
-![GitHub commit
-activity](https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Commits](https://img.shields.io/github/last-commit/GRID3/grid3rmd)
 <!-- badges: end -->
 
 -----
 
-This R package contains R Markdown templates for the
-[GRID3](http://grid3.org/) project, using brand fonts, colour schemes
-and icons. The package can be installed from GitHub as follows:
+This R package provides R Markdown templates for the
+[GRID3](http://grid3.org/) project. These templates provide branded
+fonts, colour schemes and icons. The package can be installed from
+GitHub as follows:
 
     devtools::install_github("GRID3/grid3rmd")
 
@@ -28,9 +30,9 @@ changing the output format in the the YAML of your R Markdown document
 using the following:
 
     output:
-    grid3rmd::html_grid3: default
-    grid3rmd::pdf_grid3: default
-    grid3rmd::word_grid3: default
+      grid3rmd::html_grid3: default
+      grid3rmd::pdf_grid3: default
+      grid3rmd::word_grid3: default
 
 An example of the outputs is shown below:
 

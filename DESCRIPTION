@@ -1,9 +1,13 @@
 Package: grid3rmd
 Type: Package
 Title: GRID3 R Markdown Templates
-Version: 0.1.8
+Version: 1.0.0
+Authors@R: c(
+    person("Michael Harper", , , "michael.harper@flowminder.org", role = c("aut", "cre")),
+    person("GRID3", role = c("aut")))
 Author: Michael Harper
-Maintainer: Michael Harper <michael.harper@flowminder.org>
+URL: https://github.com/GRID3/grid3rmd
+BugReports: https://github.com/GRID3/grid3rmd
 Description: Customised HTML and PDF templates for the GRID3 project.
 License: GPL-3
 Encoding: UTF-8
