@@ -7,20 +7,24 @@
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(
-                      collapse = TRUE,
-                      comment = "#>",
-                      fig.path = "man/figures/README-",
-                      echo = FALSE,
-                      fig.align = "center",
-                      out.width = "100%"
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  dpi = 450,
+  fig.align = "center",
+  out.width = "100%"
 )
 
 options(scipen = 999)
 ```
 
 # grid3rmd 
+
+<!-- badges: start --> 
 ![GitHub commit
 activity](https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+ <!-- badges: end -->
 
 -----
 
@@ -36,15 +40,15 @@ The template includes output formats for PDF, HTML and Word. These are available
 
 ```
 output:
-  grid3rmd::html_grid3: default
-  grid3rmd::pdf_grid3: default
-  grid3rmd::word_grid3: default
+grid3rmd::html_grid3: default
+grid3rmd::pdf_grid3: default
+grid3rmd::word_grid3: default
 ```
 
 An example of the outputs is shown below:
 
 ```{r echo = F}
-knitr::include_graphics("screenshot.png")
+knitr::include_graphics("man/figures/screenshot.png")
 ```
 
 ## Custom Blocks
@@ -52,7 +56,7 @@ knitr::include_graphics("screenshot.png")
 The templates include a range of [custom blocks](https://bookdown.org/yihui/bookdown/custom-blocks.html) which can be used in documents. The options available include **tip**, **question**, **exercise**, **important**, **rmdnote**, **rmdcaution**, **rmdimportant**, **rmdtip**, **rmdwarning**. These are used within code chunks by setting the header as `{block2, type = "tip"}` and including markdown text within the chunk. The full set of options are shown below:
 
 ```{r, echo = F}
-knitr::include_graphics("customChunks.png")
+knitr::include_graphics("man/figures/customChunks.png")
 ```
 
 For more examples and demonstrations, users should refer to the [template](https://github.com/GRID3/grid3rmd/blob/master/inst/rmarkdown/templates/gridTraining/skeleton/skeleton.Rmd)

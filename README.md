@@ -3,8 +3,13 @@
 
 # grid3rmd
 
+<!-- badges: start -->
+
 ![GitHub commit
 activity](https://img.shields.io/badge/Status-Work%20In%20Progress-orange.svg)
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+<!-- badges: end -->
 
 -----
 
@@ -23,13 +28,13 @@ changing the output format in the the YAML of your R Markdown document
 using the following:
 
     output:
-      grid3rmd::html_grid3: default
-      grid3rmd::pdf_grid3: default
-      grid3rmd::word_grid3: default
+    grid3rmd::html_grid3: default
+    grid3rmd::pdf_grid3: default
+    grid3rmd::word_grid3: default
 
 An example of the outputs is shown below:
 
-<img src="screenshot.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/screenshot.png" width="100%" style="display: block; margin: auto;" />
 
 ## Custom Blocks
 
@@ -41,7 +46,7 @@ can be used in documents. The options available include **tip**,
 chunks by setting the header as `{block2, type = "tip"}` and including
 markdown text within the chunk. The full set of options are shown below:
 
-<img src="customChunks.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/customChunks.png" width="100%" style="display: block; margin: auto;" />
 
 For more examples and demonstrations, users should refer to the
 [template](https://github.com/GRID3/grid3rmd/blob/master/inst/rmarkdown/templates/gridTraining/skeleton/skeleton.Rmd)
