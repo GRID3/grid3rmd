@@ -19,7 +19,7 @@ This R package provides R Markdown templates for the
 fonts, colour schemes and icons. The package can be installed from
 GitHub as follows:
 
-    devtools::install_github("GRID3/grid3rmd")
+    remotes::install_github("GRID3/grid3rmd")
 
 ## Using the templates
 
